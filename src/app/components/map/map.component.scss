@@ -1,0 +1,26 @@
+.map-wrapper {
+  display: inline-block;
+  max-width: 500px;
+  border: 1px solid black;
+
+  .map {
+    display: flex;
+    flex-direction: column;
+
+    .map-row {
+      display: flex;
+    }
+
+    .map-cell {
+      border: 1px solid white;
+      height: 50px;
+      width: 50px;
+
+      .character {
+        display: block;
+        margin: auto;
+      }
+
+    }
+  }
+}

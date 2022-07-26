@@ -1,0 +1,10 @@
+<div class="map-wrapper">
+  <div class="map">
+    <div *ngFor="let row of map.locations" class="map-row">
+      <div *ngFor="let col of row" class="map-cell" [style.background]="col.scene.backgroundColor">
+        <!-- {{col.scene.description}} -->
+        <img *ngIf="!!col.character" class="character" src="../../../assets/sprites/{{col.character.img}}">
+      </div>
+    </div>
+  </div>
+</div>

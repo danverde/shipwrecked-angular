@@ -1,0 +1,13 @@
+// Fade to transparent white
+@mixin fade {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.7) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
+// Fade to 100% white
+@mixin opaque-fade {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
+// TODO make a mixin for the linear gradient transition? see button component as an example

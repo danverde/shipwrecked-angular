@@ -1,0 +1,11 @@
+@import './styles/variables.scss';
+
+main {
+  width: $display-width;
+  height: $display-height;
+  margin: auto;
+  background: #e8e8e8;
+  padding: 15px;
+  // overflow: hidden;
+  // height: 100%;
+}

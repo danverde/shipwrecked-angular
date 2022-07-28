@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DrawerService } from 'src/app/services/drawer-service.service';
 
 @Component({
   selector: 'app-main-menu',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private drawerService: DrawerService) { }
 
   ngOnInit(): void {
+  }
+
+  handleHelpButtonClick() {
+    this.drawerService.toggle();
+    console.log('main menu drawer open');
   }
 
 }

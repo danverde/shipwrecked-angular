@@ -1,8 +1,10 @@
+<app-help-drawer></app-help-drawer>
+
 <div class="main-menu-wrapper">
   <h1 class="title"> Shipwrecked</h1>
   <div class="button-wrapper">
     <app-button type="banner">New Game</app-button>
     <app-button type="banner" [disabled]="true">Load Game</app-button>
-    <app-button type="banner" [disabled]="true">Help Menu</app-button>
+    <app-button type="banner" (click)="handleHelpButtonClick()">Help Menu</app-button>
   </div>
 </div>

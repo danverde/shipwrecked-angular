@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export type buttonType = 'banner' | 'primary';
 
@@ -11,10 +11,16 @@ export class ButtonComponent implements OnInit {
 
   @Input() type: buttonType = 'primary';
   @Input() disabled = false;
+  @Output() clickEvent = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handleClick(e: Event) {
+    e.preventDefault();
+    this.clickEvent.emit();
   }
 
 }

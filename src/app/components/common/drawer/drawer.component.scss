@@ -1,13 +1,23 @@
+@import '../../../styles/variables.scss';
+
+$drawer-width: 500px;
+$transition-time: 0.3s;
+
 .drawer {
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   height: 100vh;
-  width: 500px;
+  width: $drawer-width;
   background-color: white;
   z-index: 3;
   padding: 30px;
+  transition: left $transition-time;
+
+  &.closed {
+    left: -$drawer-width;
+  }
 
   .close-button {
     display: block;
@@ -16,6 +26,7 @@
     border: none;
     font-size: 16pt;
     cursor: pointer;
+    font-family: $primary-font;
   }
 }
 
@@ -28,9 +39,12 @@
   width: 100vw;
   background-color: rgba($color: black, $alpha: 0.6);
   z-index: 2;
-}
+  opacity: 1;
+  transition: all $transition-time;
+  visibility: visible;
 
-.closed {
-  opacity: 0;
-  z-index: -99;
+  &.closed {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

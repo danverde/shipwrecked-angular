@@ -1,6 +1,7 @@
 <aside class="drawer" [ngClass]="isOpen ? 'open' : 'closed'">
-  <button (click)="closeDrawer()" class="close-button">X</button>
+  <button (click)=closeDrawer() class="close-button">X</button>
+  <h1 *ngIf=!!title class="title">{{title}}</h1>
   <ng-content></ng-content>
 </aside>
 
-<div class="overlay" [ngClass]="isOpen ? 'open' : 'closed'"></div>
+<div class="overlay" (click)=closeDrawer() [ngClass]="isOpen ? 'open' : 'closed'"></div>

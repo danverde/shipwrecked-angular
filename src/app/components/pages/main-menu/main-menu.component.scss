@@ -2,21 +2,7 @@
 @import '../../../styles/variables.scss';
 
 .main-menu-wrapper {
-  display: block;
   height: 100%;
-  max-width: 100%;
-  padding: 15px;
-  background-image: url('../../../../assets/shipwreck.jpeg');
-  background-size: cover;
-  background-position: center;
-
-  h1 {
-    @include fade;
-    margin: 0;
-    display: inline-block;
-    padding: 0 50px;
-    font-family: $secondary-font;
-  }
 
   .button-wrapper {
     display: flex;

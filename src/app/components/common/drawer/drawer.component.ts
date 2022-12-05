@@ -9,6 +9,9 @@ import { DrawerService } from 'src/app/services/drawer-service.service';
 })
 export class DrawerComponent implements OnInit {
 
+  // TODO Update service to support multiple drawers simultaneously!
+  // https://stackoverflow.com/questions/53357636/controling-the-angular-material-mat-drawer-from-another-component
+
   @Input() title = '';
 
   constructor(private drawerService: DrawerService) { }

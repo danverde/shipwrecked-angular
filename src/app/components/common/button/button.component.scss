@@ -1,6 +1,10 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
+:host {
+  display: inline-block;
+}
+
 .banner {
   @include fade;
   transition: background-color 0.3s;
@@ -16,6 +20,7 @@
   font-size: 16pt;
   cursor: pointer;
   border: none;
+  padding: 0 30px;
 
   &:disabled {
     cursor: initial;

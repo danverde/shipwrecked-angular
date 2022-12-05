@@ -10,6 +10,7 @@ export type buttonType = 'banner' | 'primary';
 export class ButtonComponent implements OnInit {
 
   @Input() type: buttonType = 'primary';
+  @Input() route: string = '';
   @Input() disabled = false;
   @Output() clickEvent = new EventEmitter();
 

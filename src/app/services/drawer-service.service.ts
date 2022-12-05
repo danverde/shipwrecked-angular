@@ -7,6 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class DrawerService {
 
   // TODO Update service to support multiple drawers simultaneously!
+  // https://stackoverflow.com/questions/53357636/controling-the-angular-material-mat-drawer-from-another-component
 
   public isOpen = new BehaviorSubject(false);
 

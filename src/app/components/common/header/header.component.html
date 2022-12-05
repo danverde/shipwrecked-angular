@@ -1,0 +1,14 @@
+<ng-container [ngSwitch]="level">
+  <h1 *ngSwitchCase="'h1'">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </h1>
+
+  <h2 *ngSwitchCase="'h2'">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </h2>
+
+</ng-container>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

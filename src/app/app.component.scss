@@ -6,6 +6,14 @@ main {
   margin: auto;
   background: #e8e8e8;
   padding: 15px;
-  // overflow: hidden;
-  // height: 100%;
+}
+
+.page-wrapper {
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  padding: 15px;
+  background-image: url('../assets/shipwreck.jpeg');
+  background-size: cover;
+  background-position: center;
 }

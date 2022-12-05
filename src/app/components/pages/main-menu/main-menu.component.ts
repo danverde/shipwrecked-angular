@@ -15,7 +15,6 @@ export class MainMenuComponent implements OnInit {
 
   handleHelpButtonClick() {
     this.drawerService.toggle();
-    console.log('main menu drawer open');
   }
 
 }

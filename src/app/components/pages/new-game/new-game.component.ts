@@ -20,7 +20,6 @@ export class NewGameComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private route: ActivatedRoute,
     private router: Router,
     private guid: GuidService) { }
 
@@ -41,7 +40,7 @@ export class NewGameComponent implements OnInit {
     this.store.dispatch(GamesAction.newGame({ game }));
     this.store.dispatch(PlayerActions.newPlayer({ player }));
 
-    this.router.navigate(['/game', { relativeTo: this.route }]);
+    this.router.navigate(['/game']);
   }
 
 }

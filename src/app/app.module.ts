@@ -11,12 +11,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { DrawerComponent } from './components/common/drawer/drawer.component';
 import { HelpDrawerComponent } from './components/help-drawer/help-drawer.component';
-import { gamesReducer } from './store/reducers/games.reducer';
+import { gameReducer } from './store/reducers/games.reducer';
 import { booksReducer } from './store/reducers/books.reducer';
 import { NewGameComponent } from './components/pages/new-game/new-game.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { TextInputComponent } from './components/common/text-input/text-input.component';
 import { FormsModule } from '@angular/forms';
+import { playerReducer } from './store/reducers/player.reducer';
+import { GameMenuComponent } from './components/pages/game-menu/game-menu.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,18 @@ import { FormsModule } from '@angular/forms';
     HelpDrawerComponent,
     NewGameComponent,
     HeaderComponent,
-    TextInputComponent
+    TextInputComponent,
+    GameMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({ books: booksReducer, games: gamesReducer }),
+    StoreModule.forRoot({
+      books: booksReducer,
+      game: gameReducer,
+      player: playerReducer,
+    }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

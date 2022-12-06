@@ -7,6 +7,7 @@
   </div>
   <div class="footer">
     <app-button type="banner" route="/main">Back</app-button>
-    <app-button type="banner" route="/main" [disabled]="!name">Start</app-button>
+    <!-- <app-button type="banner" route="/game" [disabled]="!name">Start</app-button> -->
+    <app-button type="banner" [disabled]="!name" (click)="handleStartClick()">Start</app-button>
   </div>
 </div>

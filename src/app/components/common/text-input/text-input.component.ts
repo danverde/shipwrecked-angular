@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-text-input',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextInputComponent implements OnInit {
 
+  @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  updateValue(event: string): void {
+    this.value = event;
+    this.valueChange.emit(this.value);
   }
 
 }

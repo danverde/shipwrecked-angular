@@ -16,6 +16,7 @@ import { booksReducer } from './store/reducers/books.reducer';
 import { NewGameComponent } from './components/pages/new-game/new-game.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { TextInputComponent } from './components/common/text-input/text-input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TextInputComponent } from './components/common/text-input/text-input.co
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule.forRoot({ books: booksReducer, games: gamesReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

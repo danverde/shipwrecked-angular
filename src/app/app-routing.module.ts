@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GameMenuComponent } from './components/pages/game-menu/game-menu.component';
+import { GameComponent } from './components/pages/game/game.component';
 import { MainMenuComponent } from './components/pages/main-menu/main-menu.component';
 import { NewGameComponent } from './components/pages/new-game/new-game.component';
 
@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'new-game', component: NewGameComponent
   },
   {
-    path: 'game', component: GameMenuComponent
+    path: 'game', component: GameComponent
   },
   {
     path: '**', redirectTo: '/main', pathMatch: 'full'

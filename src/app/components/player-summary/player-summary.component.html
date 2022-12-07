@@ -1,0 +1,10 @@
+<div class="player-summary-wrapper">
+  <img *ngIf="player?.profileImg" [src]="player?.profileImg">
+
+  <p class="player-name">{{player?.name}}</p>
+  <p class="level">Level: {{player?.level ?? 0}}</p>
+  <app-gauge label="Health" [max]="player?.maxHealth ?? 0" [value]="player?.health?? 0"></app-gauge>
+  <app-gauge label="Hunger" [max]="player?.hungerLimit ?? 0" [value]="player?.hunger ?? 0" type="inverted"> </app-gauge>
+  <app-gauge label="Exp" [max]="100" [value]="player?.experience ?? 0" type="info"></app-gauge>
+
+</div>

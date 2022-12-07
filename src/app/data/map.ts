@@ -1,5 +1,5 @@
 import { ILocation, IMap, IScene } from "../models/map";
-import { player } from "./player";
+import { initialPlayer } from "./player";
 
 const ocean: IScene = {
   description: 'The ocean',
@@ -41,7 +41,7 @@ const locations: ILocation[][] = [
   {
     row: 1,
     col: 2,
-    character: player,
+    character: initialPlayer,
     scene: ocean
   }],
   [{

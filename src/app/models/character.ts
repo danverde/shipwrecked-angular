@@ -1,7 +1,8 @@
 import { IInventory } from "./inventory";
 
 export interface ICharacter {
-  img: string;
+  spriteImg: string;
+  profileImg: string;
   name: string;
   maxHealth: number;
   health: number;

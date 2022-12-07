@@ -1,0 +1,26 @@
+.game-wrapper {
+  display: flex;
+  height: 100%;
+
+  .left-col {
+    display: flex;
+    flex-direction: column;
+
+    .bottom-wrapper {
+      margin-top: 15px;
+      flex-grow: 1;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  .map-wrapper {
+    flex-grow: 1;
+    padding: 15px;
+  }
+}

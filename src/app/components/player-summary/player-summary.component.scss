@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+
+.player-summary-wrapper {
+  width: 175px;
+  background: $background-color-2;
+  padding: 15px;
+  font-family: $primary-font;
+  font-weight: bold;
+  font-size: 16px;
+
+  img {
+    display: block;
+    margin: auto;
+    border: 2px solid gold;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .level {
+    margin-top: 5px;
+  }
+
+  .player-name {
+    font-size: 20px;
+  }
+}

@@ -3,11 +3,11 @@
   <div class="input-wrapper">
     <p>Chose your character name:</p>
     <app-text-input [(value)]="name"></app-text-input>
+    <!-- TODO set difficulty -->
 
   </div>
   <div class="footer">
     <app-button type="banner" route="/main">Back</app-button>
-    <!-- <app-button type="banner" route="/game" [disabled]="!name">Start</app-button> -->
     <app-button type="banner" [disabled]="!name" (click)="handleStartClick()">Start</app-button>
   </div>
 </div>

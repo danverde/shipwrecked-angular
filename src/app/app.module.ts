@@ -18,7 +18,10 @@ import { HeaderComponent } from './components/common/header/header.component';
 import { TextInputComponent } from './components/common/text-input/text-input.component';
 import { FormsModule } from '@angular/forms';
 import { playerReducer } from './store/reducers/player.reducer';
-import { GameMenuComponent } from './components/pages/game-menu/game-menu.component';
+import { GameComponent } from './components/pages/game/game.component';
+import { PlayerSummaryComponent } from './components/player-summary/player-summary.component';
+import { GaugeComponent } from './components/common/gauge/gauge.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { GameMenuComponent } from './components/pages/game-menu/game-menu.compon
     NewGameComponent,
     HeaderComponent,
     TextInputComponent,
-    GameMenuComponent
+    GameComponent,
+    PlayerSummaryComponent,
+    GaugeComponent
   ],
   imports: [
     BrowserModule,

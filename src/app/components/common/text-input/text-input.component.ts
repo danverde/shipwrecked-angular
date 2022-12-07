@@ -7,6 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TextInputComponent implements OnInit {
 
+  // TODO add a label...
+
   @Input() value: string = '';
   @Output() valueChange = new EventEmitter<string>();
 

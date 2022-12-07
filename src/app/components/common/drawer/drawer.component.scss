@@ -29,7 +29,7 @@ $transition-time: 0.3s;
     margin-left: auto;
     background-color: initial;
     border: none;
-    font-size: 16pt;
+    font-size: $font-size-small;
     cursor: pointer;
     font-family: $primary-font;
   }

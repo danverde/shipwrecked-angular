@@ -6,7 +6,7 @@
   padding: 15px;
   font-family: $primary-font;
   font-weight: bold;
-  font-size: 16px;
+  font-size: $font-size-small;
 
   img {
     display: block;
@@ -25,6 +25,6 @@
   }
 
   .player-name {
-    font-size: 20px;
+    font-size: $font-size-med;
   }
 }

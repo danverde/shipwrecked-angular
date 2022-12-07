@@ -3,7 +3,9 @@ import { createReducer, on } from '@ngrx/store';
 import { IGame } from 'src/app/models/game';
 import { GamesAction } from '../actions/games.actions';
 
-export const initialState: IGame = {} as IGame;
+export interface IGameState extends IGame { };
+
+export const initialState: IGameState = {} as IGameState;
 
 export const gameReducer = createReducer(
   initialState,

@@ -1,8 +1,8 @@
 import { ICharacter } from "./character";
 
 export interface IPlayer extends ICharacter {
-  hunger: number;
-  hungerLimit: number;
+  stamina: number;
+  maxStamina: number;
   level: number;
   experience: number;
 }

@@ -17,8 +17,8 @@ export const initialPlayer: IPlayer = {
     items: []
   },
 
-  hunger: 5,
-  hungerLimit: 20,
+  stamina: 15,
+  maxStamina: 20,
   level: 1,
   experience: 0
 };

@@ -1,6 +1,7 @@
 <div class="gauge-wrapper">
   <p>{{label}}: {{value}} / {{max}}</p>
-  <div class="progress-bar" [ngClass]="{'inverted': type === 'inverted', 'info': type === 'info' }">
-    <div class="progress" [style.width]="width"></div>
+  <div class="progress-bar" [class.info]="type === 'info'">
+    <div class="progress" [style.width]="gaugePercentString" [class.warning]="progressType === 'warning'"
+      [class.critical]="progressType === 'critical'"></div>
   </div>
 </div>

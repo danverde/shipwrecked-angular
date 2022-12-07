@@ -10,31 +10,25 @@
     width: 100%;
     height: 5px;
     border-radius: 3px;
-    background: red;
+    background: gray;
 
-    &.inverted {
-      background: green;
-
-      & .progress {
-        background: red;
-      }
+    &.info .progress {
+      background: rgb(0, 162, 255);
     }
-
-    &.info {
-      background: gray;
-
-      & .progress {
-        background: rgb(0, 162, 255);
-      }
-    }
-
 
     .progress {
       display: block;
       height: 5px;
       background: green;
       border-radius: 3px;
-      ;
+
+      &.warning {
+        background: gold;
+      }
+
+      &.critical {
+        background: red;
+      }
     }
   }
 }

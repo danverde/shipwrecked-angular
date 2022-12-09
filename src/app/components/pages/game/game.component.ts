@@ -10,6 +10,8 @@ export class GameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // TODO load game.
+    // Shouldn't load child components until the game is in redux!
   }
 
 }

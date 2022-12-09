@@ -33,7 +33,7 @@ import { initialStore } from './store/reducers/index.reducer';
     TextInputComponent,
     GameComponent,
     PlayerSummaryComponent,
-    GaugeComponent
+    GaugeComponent,
   ],
   imports: [
     BrowserModule,

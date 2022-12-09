@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'src/app/data/map';
-import { IMap } from 'src/app/models/map';
+import { map } from 'src/app/data/map.data';
+import { IMap } from 'src/app/models/map.model';
 
 @Component({
   selector: 'app-map',

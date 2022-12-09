@@ -1,4 +1,4 @@
-import { IInventory } from "./inventory";
+import { IInventory } from "./inventory.model";
 
 export interface ICharacter {
   spriteImg: string;

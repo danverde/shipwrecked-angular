@@ -1,10 +1,11 @@
-import { CharacterStatus } from "../models/character";
-import { IPlayer } from "../models/player";
+import { CharacterStatus } from "../models/character.model";
+import { IPlayer } from "../models/player.model";
 
 export const initialPlayer: IPlayer = {
-  spriteImg: 'general.png',
+  // spriteImg: '/assets/sprites/man/man.gif',
+  spriteImg: '/assets/sprites/general.png',
   profileImg: '/assets/geirk.png',
-  name: '',
+  name: 'Geirk',
   maxHealth: 20,
   health: 20,
   move: 1,

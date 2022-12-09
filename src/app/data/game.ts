@@ -1,4 +1,4 @@
-import { GameStatus, IGame } from "../models/game";
+import { GameStatus, IGame } from "../models/game.model";
 
 export const initialGame: IGame = {
   id: '',

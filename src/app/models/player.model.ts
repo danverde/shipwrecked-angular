@@ -1,4 +1,4 @@
-import { ICharacter } from "./character";
+import { ICharacter } from "./character.model";
 
 export interface IPlayer extends ICharacter {
   stamina: number;

@@ -1,7 +1,7 @@
 import { createActionGroup, props } from "@ngrx/store";
-import { IGame } from "src/app/models/game";
+import { IGame } from "src/app/models/game.model";
 
-export const GamesAction = createActionGroup({
+export const GameActions = createActionGroup({
   source: 'Games',
   events: {
     'New Game': props<{ game: IGame }>(),

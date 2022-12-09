@@ -19,6 +19,9 @@ import { GameComponent } from './components/pages/game/game.component';
 import { PlayerSummaryComponent } from './components/player-summary/player-summary.component';
 import { GaugeComponent } from './components/common/gauge/gauge.component';
 import { initialStore } from './store/reducers/index.reducer';
+import { GameSummaryComponent } from './components/game-summary/game-summary.component';
+import { PersistService } from './services/persist.service';
+import { LoadGameComponent } from './components/pages/load-game/load-game.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { initialStore } from './store/reducers/index.reducer';
     GameComponent,
     PlayerSummaryComponent,
     GaugeComponent,
+    GameSummaryComponent,
+    LoadGameComponent,
   ],
   imports: [
     BrowserModule,

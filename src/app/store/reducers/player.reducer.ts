@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { initialPlayer } from "src/app/data/player";
+import { initialPlayer } from "src/app/data/player.data";
 import { IPlayer } from "src/app/models/player.model";
 import { PlayerActions } from "../actions/player.actions";
 

@@ -1,5 +1,5 @@
 import { ILocation, IMap, IScene } from "../models/map.model";
-import { initialPlayer } from "./player";
+import { initialPlayer } from "./player.data";
 
 const ocean: IScene = {
   description: 'The ocean',

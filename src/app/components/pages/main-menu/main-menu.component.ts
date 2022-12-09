@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DrawerService } from 'src/app/services/drawer-service.service';
+import { PersistService } from 'src/app/services/persist.service';
 
 @Component({
   selector: 'app-main-menu',
@@ -8,7 +9,8 @@ import { DrawerService } from 'src/app/services/drawer-service.service';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor(private drawerService: DrawerService) { }
+  constructor(
+    private drawerService: DrawerService) { }
 
   ngOnInit(): void {
   }

@@ -47,7 +47,6 @@ export class GameService {
     this.store.dispatch(MapActions.setMap({ map: initialMap }));
     this.store.dispatch(PlayerActions.setPlayer({ player }));
 
-    debugger;
     this.router.navigate([`/game/${game.id}`]);
   }
 

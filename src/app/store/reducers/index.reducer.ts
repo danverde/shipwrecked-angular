@@ -7,7 +7,7 @@ import { IPlayerState, playerReducer } from "./player.reducer";
 export interface IAppStore {
   game: IGameState;
   player: IPlayerState;
-  map: ImportState;
+  map: IMapState;
 }
 
 interface IStoreReducers {

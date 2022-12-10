@@ -18,7 +18,6 @@ export class LoadGameComponent implements OnInit {
   }
 
   handleLoadGameClick(game: IPackedGame): void {
-    console.log('handle click called');
     this.persistService.loadGame(game);
   }
 

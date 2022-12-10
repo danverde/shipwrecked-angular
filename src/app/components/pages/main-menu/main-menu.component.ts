@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DrawerService } from 'src/app/services/drawer-service.service';
+import { DrawerService } from 'src/app/services/drawer.service';
 import { PersistService } from 'src/app/services/persist.service';
 
 @Component({

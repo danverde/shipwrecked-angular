@@ -3,8 +3,8 @@
     <app-player-summary></app-player-summary>
     <div class="bottom-wrapper">
       <div class="col">
-        <app-button type="primary" [disabled]="true">Save</app-button>
-        <app-button type="primary" route="/main">Quit</app-button>
+        <app-button type="primary" (click)="handleSaveClick()">Save</app-button>
+        <app-button type="primary" (click)="handleQuitClick()">Quit</app-button>
       </div>
     </div>
   </div>

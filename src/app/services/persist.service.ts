@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { initialGame } from '../data/game.data';
-import { initialMap } from '../data/map.data';
-import { initialPlayer } from '../data/player.data';
 import { IPackedGame } from '../models/persist.model';
 import { GameActions } from '../store/actions/game.actions';
 import { MapActions } from '../store/actions/map.actions';
 import { PlayerActions } from '../store/actions/player.actions';
 import { IAppStore } from '../store/reducers/index.reducer';
 
-const GamePrefix = '[Shipwreck Game]';
+const GamePrefix = 'sg:';
 
 @Injectable({
   providedIn: 'root'
@@ -22,17 +19,14 @@ export class PersistService {
     private router: Router) {
   }
 
-  saveGame(): void {
-    // TODO implement this for real!!
-    console.warn('SAVE GAME ISN\'T USING REAL DATA!!!');
-
-    const g: IPackedGame = {
-      game: initialGame,
-      player: initialPlayer,
-      map: initialMap
+  saveGame(store: IAppStore): void {
+    const packedGame: IPackedGame = {
+      game: store.game,
+      player: store.player,
+      map: store.map
     };
 
-    localStorage.setItem('[Shipwreck Game]:1', JSON.stringify(g));
+    localStorage.setItem(this.getPrefixedGame(packedGame.game.id), JSON.stringify(packedGame));
   }
 
   listSavedGames(): IPackedGame[] {
@@ -55,8 +49,6 @@ export class PersistService {
     this.store.dispatch(PlayerActions.setPlayer({ player }));
     this.store.dispatch(MapActions.setMap({ map }));
 
-    console.log(`/game/${game.id}`);
-    debugger;
     this.router.navigate([`/game/${game.id}`]);
   }
 
@@ -76,6 +68,6 @@ export class PersistService {
   }
 
   private getPrefixedGame(gameId: string): string {
-    return `${GamePrefix}:${gameId}`;
+    return `${GamePrefix}${gameId}`;
   }
 }

@@ -1,1 +1,25 @@
-<p>load-game works!</p>
+<div class="load-game-wrapper">
+  <app-header>Load Game</app-header>
+
+  <div class="game-list-wrapper">
+
+    <ng-container *ngFor="let game of savedGames; let i = index">
+      <app-button type="banner" (click)="handleLoadGameClick(game)">
+        <div class="button-content-wrapper">
+          <div class="left-col">
+            Game {{i + 1}}
+          </div>
+          <div class="button-column right-col">
+            <span>{{game.player.name}} <img [src]="game.player.spriteImg"></span>
+            <span class="small">Lv.{{game.player.level}} | Day {{game.game.day}}</span>
+          </div>
+        </div>
+      </app-button>
+    </ng-container>
+
+
+  </div>
+  <div class="footer">
+    <app-button route="/main" type="banner">Back</app-button>
+  </div>
+</div>

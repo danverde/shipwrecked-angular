@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'src/app/data/map.data';
+import { initialMap } from 'src/app/data/map.data';
 import { IMap } from 'src/app/models/map.model';
 
 @Component({
@@ -11,7 +11,7 @@ export class MapComponent implements OnInit {
 
   constructor() { }
 
-  map: IMap = map;
+  map: IMap = initialMap;
 
   ngOnInit(): void {
   }

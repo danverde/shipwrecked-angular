@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { initialGame } from 'src/app/data/game.data';
-import { map } from 'src/app/data/map.data';
+import { initialMap } from 'src/app/data/map.data';
 import { initialPlayer } from 'src/app/data/player.data';
 import { IGame } from 'src/app/models/game.model';
 import { IPlayer } from 'src/app/models/player.model';

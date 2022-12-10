@@ -9,5 +9,5 @@ export const initialState: IGameState = {} as IGameState;
 
 export const gameReducer = createReducer(
   initialState,
-  on(GameActions.newGame, (_state, { game }) => ({ ..._state, ...game }))
+  on(GameActions.setGame, (_state, { game }) => ({ ..._state, ...game }))
 );

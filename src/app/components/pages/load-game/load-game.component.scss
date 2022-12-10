@@ -1,0 +1,57 @@
+@import '../../../styles/variables.scss';
+
+.load-game-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .game-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 30px;
+
+    .button-content-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 10px;
+
+      .button-column {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+      }
+
+      .left-col {
+        align-self: center;
+        margin-right: 7px;
+      }
+
+      .right-col {
+        border-left: 1px solid black;
+        padding-left: 7px;
+
+        span:first-child {
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .small {
+        font-size: $font-size-xs-small;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}

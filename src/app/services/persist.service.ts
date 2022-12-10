@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { IGame } from '../models/game.model';
+import { initialGame } from '../data/game.data';
+import { initialMap } from '../data/map.data';
+import { initialPlayer } from '../data/player.data';
 import { IPackedGame } from '../models/persist.model';
 import { GameActions } from '../store/actions/game.actions';
 import { MapActions } from '../store/actions/map.actions';
@@ -21,7 +23,16 @@ export class PersistService {
   }
 
   saveGame(): void {
-    this.store.select
+    // TODO implement this for real!!
+    console.warn('SAVE GAME ISN\'T USING REAL DATA!!!');
+
+    const g: IPackedGame = {
+      game: initialGame,
+      player: initialPlayer,
+      map: initialMap
+    };
+
+    localStorage.setItem('[Shipwreck Game]:1', JSON.stringify(g));
   }
 
   listSavedGames(): IPackedGame[] {
@@ -37,17 +48,23 @@ export class PersistService {
     return games;
   }
 
-  loadGame(gameId: string): void {
+  loadGame(packedGame: IPackedGame): void {
+    const { player, game, map } = packedGame;
+
+    this.store.dispatch(GameActions.setGame({ game }));
+    this.store.dispatch(PlayerActions.setPlayer({ player }));
+    this.store.dispatch(MapActions.setMap({ map }));
+
+    console.log(`/game/${game.id}`);
+    debugger;
+    this.router.navigate([`/game/${game.id}`]);
+  }
+
+  loadGameById(gameId: string): void {
     try {
       const packedGame: IPackedGame = JSON.parse(this.getPrefixedGame(gameId) as any);
       if (packedGame) {
-        const { player, game, map } = packedGame;
-
-        this.store.dispatch(GameActions.newGame({ game }));
-        this.store.dispatch(PlayerActions.newPlayer({ player }));
-        this.store.dispatch(MapActions.setMap({ map }));
-
-        this.router.navigate([`/game/${game.id}`]);
+        this.loadGame(packedGame);
       } else {
         // TODO handle me!
         console.error('Unable to load that game!');

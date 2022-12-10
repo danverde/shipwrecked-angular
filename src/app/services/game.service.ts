@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { map } from 'src/app/data/map.data';
+import { initialMap } from 'src/app/data/map.data';
 import { initialGame } from '../data/game.data';
 import { initialPlayer } from '../data/player.data';
 import { allSettings } from '../data/settings.data';
@@ -43,10 +43,11 @@ export class GameService {
       id: this.guid.newGuid()
     };
 
-    this.store.dispatch(GameActions.newGame({ game }));
-    this.store.dispatch(MapActions.setMap({ map }));
-    this.store.dispatch(PlayerActions.newPlayer({ player }));
+    this.store.dispatch(GameActions.setGame({ game }));
+    this.store.dispatch(MapActions.setMap({ map: initialMap }));
+    this.store.dispatch(PlayerActions.setPlayer({ player }));
 
+    debugger;
     this.router.navigate([`/game/${game.id}`]);
   }
 

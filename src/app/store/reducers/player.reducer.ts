@@ -10,5 +10,5 @@ export const initialState: IPlayerState = initialPlayer as IPlayerState;
 
 export const playerReducer = createReducer(
   initialState,
-  on(PlayerActions.newPlayer, (_state, { player }) => ({ ..._state, ...player }))
+  on(PlayerActions.setPlayer, (_state, { player }) => ({ ..._state, ...player }))
 );

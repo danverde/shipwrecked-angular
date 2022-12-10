@@ -15,7 +15,11 @@ export class LoadGameComponent implements OnInit {
 
   ngOnInit(): void {
     this.savedGames = this.persistService.listSavedGames();
-    console.log(this.savedGames);
+  }
+
+  handleLoadGameClick(game: IPackedGame): void {
+    console.log('handle click called');
+    this.persistService.loadGame(game);
   }
 
 }

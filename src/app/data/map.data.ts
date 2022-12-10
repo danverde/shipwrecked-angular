@@ -88,6 +88,6 @@ const locations: ILocation[][] = [
   }]
 ]
 
-export const map: IMap = {
+export const initialMap: IMap = {
   locations
 };

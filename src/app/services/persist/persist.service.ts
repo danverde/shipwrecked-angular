@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { IPackedGame } from '../models/persist.model';
-import { GameActions } from '../store/actions/game.actions';
-import { MapActions } from '../store/actions/map.actions';
-import { PlayerActions } from '../store/actions/player.actions';
-import { IAppStore } from '../store/reducers/index.reducer';
+import { IPackedGame } from '../../models/persist.model';
+import { GameActions } from '../../store/actions/game.actions';
+import { MapActions } from '../../store/actions/map.actions';
+import { PlayerActions } from '../../store/actions/player.actions';
+import { IAppStore } from '../../store/reducers/index.reducer';
 
 const GamePrefix = 'sg:';
 

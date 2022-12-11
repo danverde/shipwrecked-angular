@@ -20,8 +20,8 @@ import { PlayerSummaryComponent } from './components/player-summary/player-summa
 import { GaugeComponent } from './components/common/gauge/gauge.component';
 import { initialStore } from './store/reducers/index.reducer';
 import { GameSummaryComponent } from './components/game-summary/game-summary.component';
-import { PersistService } from './services/persist.service';
 import { LoadGameComponent } from './components/pages/load-game/load-game.component';
+import { AlertComponent } from './components/common/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,7 @@ import { LoadGameComponent } from './components/pages/load-game/load-game.compon
     GaugeComponent,
     GameSummaryComponent,
     LoadGameComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

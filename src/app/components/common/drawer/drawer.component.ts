@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DrawerService } from 'src/app/services/drawer.service';
+import { DrawerService } from 'src/app/services/drawer/drawer.service';
 
 @Component({
   selector: 'app-drawer',

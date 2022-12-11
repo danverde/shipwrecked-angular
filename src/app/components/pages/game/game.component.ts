@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { PersistService } from 'src/app/services/persist.service';
+import { PersistService } from 'src/app/services/persist/persist.service';
 import { IAppStore } from 'src/app/store/reducers/index.reducer';
 
 @Component({

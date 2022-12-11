@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IPackedGame } from 'src/app/models/persist.model';
-import { PersistService } from 'src/app/services/persist.service';
+import { PersistService } from 'src/app/services/persist/persist.service';
 
 @Component({
   selector: 'app-load-game',

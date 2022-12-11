@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { initialGame } from 'src/app/data/game.data';
 import { initialMap } from 'src/app/data/map.data';
-import { initialGame } from '../data/game.data';
-import { initialPlayer } from '../data/player.data';
-import { allSettings } from '../data/settings.data';
-import { IGame } from '../models/game.model';
-import { IPlayer } from '../models/player.model';
-import { GameDifficulty } from '../models/settings.model';
-import { GameActions } from '../store/actions/game.actions';
-import { MapActions } from '../store/actions/map.actions';
-import { PlayerActions } from '../store/actions/player.actions';
-import { IAppStore } from '../store/reducers/index.reducer';
-import { GuidService } from './guid.service';
+import { initialPlayer } from 'src/app/data/player.data';
+import { allSettings } from 'src/app/data/settings.data';
+import { IGame } from 'src/app/models/game.model';
+import { IPlayer } from 'src/app/models/player.model';
+import { GameDifficulty } from 'src/app/models/settings.model';
+import { GameActions } from 'src/app/store/actions/game.actions';
+import { MapActions } from 'src/app/store/actions/map.actions';
+import { PlayerActions } from 'src/app/store/actions/player.actions';
+import { IAppStore } from 'src/app/store/reducers/index.reducer';
+import { GuidService } from '../guid/guid.service';
 
 @Injectable({
   providedIn: 'root'

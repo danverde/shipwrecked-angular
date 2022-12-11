@@ -17,6 +17,10 @@
       </app-button>
     </ng-container>
 
+    <div *ngIf="!savedGames?.length" class="no-games">
+      There are no saved games
+    </div>
+
 
   </div>
   <div class="footer">

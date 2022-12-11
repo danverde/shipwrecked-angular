@@ -1,4 +1,5 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
 
 .load-game-wrapper {
   width: 100%;
@@ -44,9 +45,21 @@
         }
       }
 
+      .delete-game {
+        font-size: $font-size-large;
+        font-family: $secondary-font;
+      }
+
       .small {
         font-size: $font-size-xs-small;
       }
+    }
+
+    .no-games {
+      @include body-fade;
+      padding: 30px;
+      text-align: center;
+      font-weight: bold;
     }
   }
 

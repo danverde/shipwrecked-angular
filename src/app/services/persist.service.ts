@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IPackedGame } from '../models/persist.model';
 import { GameActions } from '../store/actions/game.actions';
 import { MapActions } from '../store/actions/map.actions';
@@ -13,6 +14,9 @@ const GamePrefix = 'sg:';
   providedIn: 'root'
 })
 export class PersistService {
+
+  private savedGames: IPackedGame[] = [];
+  private savedGamesSubject: BehaviorSubject<IPackedGame[]> = new BehaviorSubject<IPackedGame[]>(this.getGamesFromLocalStorage());
 
   constructor(
     private store: Store<IAppStore>,
@@ -27,19 +31,13 @@ export class PersistService {
     };
 
     localStorage.setItem(this.getPrefixedGame(packedGame.game.id), JSON.stringify(packedGame));
+    this.savedGames = this.getGamesFromLocalStorage();
+
+    this.savedGamesSubject.next(this.savedGames);
   }
 
-  listSavedGames(): IPackedGame[] {
-    let keys: string[] = [];
-    for (var i = 0, len = localStorage.length; i < len; ++i) {
-      keys.push(localStorage.key(i) as string);
-    }
-
-    const games: IPackedGame[] = keys.reduce((acc: IPackedGame[], k: string) =>
-      k.includes(GamePrefix) ? [...acc, JSON.parse(window.localStorage.getItem(k) as string)] : acc
-      , []);
-
-    return games;
+  listSavedGames(): Observable<IPackedGame[]> {
+    return this.savedGamesSubject.asObservable();
   }
 
   loadGame(packedGame: IPackedGame): void {
@@ -65,6 +63,23 @@ export class PersistService {
       // TODO handle me!
       console.error(err, 'unable to load game');
     }
+  }
+
+  deleteSavedGame(gameId: string): void {
+    localStorage.removeItem(this.getPrefixedGame(gameId));
+    this.savedGames = this.getGamesFromLocalStorage();
+    this.savedGamesSubject.next(this.savedGames);
+  }
+
+  private getGamesFromLocalStorage(): IPackedGame[] {
+    let keys: string[] = [];
+    for (var i = 0, len = localStorage.length; i < len; ++i) {
+      keys.push(localStorage.key(i) as string);
+    }
+
+    return keys.reduce((acc: IPackedGame[], k: string) =>
+      k.includes(GamePrefix) ? [...acc, JSON.parse(window.localStorage.getItem(k) as string)] : acc
+      , []);
   }
 
   private getPrefixedGame(gameId: string): string {

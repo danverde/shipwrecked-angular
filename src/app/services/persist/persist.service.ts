@@ -52,7 +52,7 @@ export class PersistService {
 
   loadGameById(gameId: string): void {
     try {
-      const packedGame: IPackedGame = JSON.parse(this.getPrefixedGame(gameId) as any);
+      const packedGame: IPackedGame = JSON.parse(localStorage.getItem(this.getPrefixedGame(gameId)) as string);
       if (packedGame) {
         this.loadGame(packedGame);
       } else {

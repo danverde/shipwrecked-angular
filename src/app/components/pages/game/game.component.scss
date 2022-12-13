@@ -2,6 +2,10 @@
   display: flex;
   height: 100%;
 
+  app-game-summary {
+    margin-bottom: 15px;
+  }
+
   .left-col {
     display: flex;
     flex-direction: column;

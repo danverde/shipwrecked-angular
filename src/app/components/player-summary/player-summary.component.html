@@ -1,5 +1,5 @@
 <div class="player-summary-wrapper">
-  <img *ngIf="player?.profileImg" [src]="player?.profileImg">
+  <img *ngIf="player?.profileImg" [src]="player?.profileImg" class="profile-img" alt="character profile image">
 
   <p class="player-name">{{player?.name}}</p>
   <p class="level">Level: {{player?.level ?? 0}}</p>
@@ -7,5 +7,9 @@
   <app-gauge label="Stamina" [max]="player?.maxStamina ?? 0" [value]="player?.stamina ?? 0">
   </app-gauge>
   <app-gauge label="Exp" [max]="100" [value]="player?.experience ?? 0" type="info"></app-gauge>
+
+  <!-- <button class="inventory-button">
+    <img src="../../../assets/treasure-chest.svg" alt="inventory icon">
+  </button> -->
 
 </div>

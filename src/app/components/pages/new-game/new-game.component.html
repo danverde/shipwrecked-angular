@@ -1,11 +1,12 @@
 <div class="new-game-wrapper">
   <app-header>New Game</app-header>
-  <div class="input-wrapper">
-    <p>Chose your character name:</p>
-    <app-text-input [(value)]="name"></app-text-input>
+  <form class="input-wrapper" (submit)="handleStartClick()">
+    <p>Build Character</p>
+    <app-text-input [(value)]="name">Name:</app-text-input>
     <!-- TODO set difficulty -->
 
-  </div>
+
+  </form>
   <div class="footer">
     <app-button type="banner" route="/main">Back</app-button>
     <app-button type="banner" [disabled]="!name" (click)="handleStartClick()">Start</app-button>

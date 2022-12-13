@@ -19,6 +19,8 @@ export class NewGameComponent implements OnInit {
   }
 
   handleStartClick(): void {
+    // TODO validate form!
+
     this.gameService.startNewGame(this.name, GameDifficulty.Easy);
   }
 

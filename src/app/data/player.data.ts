@@ -2,8 +2,7 @@ import { CharacterStatus } from "../models/character.model";
 import { IPlayer } from "../models/player.model";
 
 export const initialPlayer: IPlayer = {
-  // spriteImg: '/assets/sprites/man/man.gif',
-  spriteImg: '/assets/sprites/general.png',
+  spriteImg: '/assets/sprites/man/man.gif',
   profileImg: '/assets/geirk.png',
   name: 'Geirk',
   maxHealth: 20,

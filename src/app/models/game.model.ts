@@ -1,9 +1,10 @@
+import { GameDifficulty } from "./settings.model";
+
 export interface IGame {
   id: string;
+  difficulty: GameDifficulty;
 
-  status: GameStatus;
   day: number;
-  settings: any;
 }
 
 export enum GameStatus {

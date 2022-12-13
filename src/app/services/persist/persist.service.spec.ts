@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DrawerService } from './drawer-service.service';
+import { PersistService } from './persist.service';
 
-describe('DrawerServiceService', () => {
-  let service: DrawerService;
+describe('PersistService', () => {
+  let service: PersistService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DrawerService);
+    service = TestBed.inject(PersistService);
   });
 
   it('should be created', () => {

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DrawerService } from 'src/app/services/drawer-service.service';
+import { DrawerService } from 'src/app/services/drawer/drawer.service';
 
 @Component({
   selector: 'app-drawer',
@@ -29,7 +29,6 @@ export class DrawerComponent implements OnInit {
 
   closeDrawer() {
     this.drawerService.toggle();
-    console.log('drawer toggle open');
   }
 
 }

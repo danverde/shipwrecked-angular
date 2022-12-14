@@ -62,42 +62,46 @@ export class GameService {
     Probably ought to research angular service best practices just to be safe.
   */
   wait(days: number): void {
-    // for (let i = 0; i < days && this.appStore?.game.status === GameStatus.playing; i++) {
-    for (let i = 0; i < days; i++) {
+    if (!this.appStore) return;
+
+    for (let i = 0; i < days && this.appStore.game.status === GameStatus.playing; i++) {
       console.log('started waiting loop');
       this.advanceDay(true);
     }
   }
 
+  // TODO Can I leverage effects to clean this up?
   private advanceDay(waiting: boolean = false): void {
     if (!this.appStore) return;
 
-    // TODO pulling straight from the store beaks b/c of immutability. Freaking JS...
     let { game, player } = this.appStore;
+    const settings = allSettings[game.difficulty];
 
     // TODO this feels SO WRONG
     game = JSON.parse(JSON.stringify(game));
     player = JSON.parse(JSON.stringify(player));
 
-    const settings = allSettings[game.difficulty];
-
     // decrease stamina
     player.stamina -= settings.playerSettings.staminaPerDay;
 
     // kill character (if stamina is 0)
+    // TODO stamina never actually hits 0 this way. Maybe use an effect?
     if (player.stamina <= 0) {
       alert('You died');
-      // TODO dispatch game over
-    }
-
-    // check for survival (if waiting)
-    if (waiting && Math.floor(Math.random() * settings.gameSettings.waitSuccessRate) === 1) {
-      alert('You won!');
-      // TODO dispatch win game
+      game.status = GameStatus.lost;
+      this.store.dispatch(GameActions.setGame({ game }));
+      return;
     }
 
     // update day
     game.day++;
+
+    // check for survival (if waiting)
+    if (waiting && Math.floor(Math.random() * settings.gameSettings.waitSuccessRate) === 1) {
+      alert('You won!');
+      game.status = GameStatus.won;
+      this.store.dispatch(GameActions.setGame({ game }));
+    }
 
     // add exp (level up if needed)
     player.experience += settings.playerSettings.expPerDay;
@@ -113,6 +117,4 @@ export class GameService {
     this.store.dispatch(GameActions.setGame({ game }));
     this.store.dispatch(PlayerActions.setPlayer({ player }));
   }
-
-
 }

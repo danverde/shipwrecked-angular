@@ -5,7 +5,7 @@ import { initialGame } from 'src/app/data/game.data';
 import { initialMap } from 'src/app/data/map.data';
 import { initialPlayer } from 'src/app/data/player.data';
 import { allSettings } from 'src/app/data/settings.data';
-import { IGame } from 'src/app/models/game.model';
+import { GameStatus, IGame } from 'src/app/models/game.model';
 import { IPlayer } from 'src/app/models/player.model';
 import { GameDifficulty } from 'src/app/models/settings.model';
 import { GameActions } from 'src/app/store/actions/game.actions';
@@ -19,11 +19,15 @@ import { GuidService } from '../guid/guid.service';
 })
 export class GameService {
 
+  appStore: IAppStore | undefined;
+
   constructor(
     private store: Store<IAppStore>,
     private router: Router,
     private guid: GuidService,
-  ) { }
+  ) {
+    this.store.subscribe((x: IAppStore) => this.appStore = x);
+  }
 
   startNewGame(playerName: string, difficulty: GameDifficulty) {
     const settings = allSettings[difficulty];
@@ -58,8 +62,57 @@ export class GameService {
     Probably ought to research angular service best practices just to be safe.
   */
   wait(days: number): void {
-
-
-    // this.store.dispatch(gameReducer.)
+    // for (let i = 0; i < days && this.appStore?.game.status === GameStatus.playing; i++) {
+    for (let i = 0; i < days; i++) {
+      console.log('started waiting loop');
+      this.advanceDay(true);
+    }
   }
+
+  private advanceDay(waiting: boolean = false): void {
+    if (!this.appStore) return;
+
+    // TODO pulling straight from the store beaks b/c of immutability. Freaking JS...
+    let { game, player } = this.appStore;
+
+    // TODO this feels SO WRONG
+    game = JSON.parse(JSON.stringify(game));
+    player = JSON.parse(JSON.stringify(player));
+
+    const settings = allSettings[game.difficulty];
+
+    // decrease stamina
+    player.stamina -= settings.playerSettings.staminaPerDay;
+
+    // kill character (if stamina is 0)
+    if (player.stamina <= 0) {
+      alert('You died');
+      // TODO dispatch game over
+    }
+
+    // check for survival (if waiting)
+    if (waiting && Math.floor(Math.random() * settings.gameSettings.waitSuccessRate) === 1) {
+      alert('You won!');
+      // TODO dispatch win game
+    }
+
+    // update day
+    game.day++;
+
+    // add exp (level up if needed)
+    player.experience += settings.playerSettings.expPerDay;
+    if (player.experience >= 100) {
+      player.level++;
+      player.experience -= 100;
+      player.maxHealth += settings.playerSettings.healthGrowth;
+      player.baseAttack += settings.playerSettings.attackGrowth;
+      player.baseDefense += settings.playerSettings.defenseGrowth;
+    }
+
+    // dispatch actions to update game & player
+    this.store.dispatch(GameActions.setGame({ game }));
+    this.store.dispatch(PlayerActions.setPlayer({ player }));
+  }
+
+
 }

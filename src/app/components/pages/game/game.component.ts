@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { GameService } from 'src/app/services/game/game.service';
 import { PersistService } from 'src/app/services/persist/persist.service';
 import { IAppStore } from 'src/app/store/reducers/index.reducer';
 
@@ -21,6 +22,7 @@ export class GameComponent implements OnInit, OnDestroy {
   constructor(
     private store: Store<IAppStore>,
     private persistService: PersistService,
+    private gameService: GameService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -55,6 +57,11 @@ export class GameComponent implements OnInit, OnDestroy {
 
   toggleMenuModal(): void {
     this.menuOpen = !this.menuOpen;
+  }
+
+  wait(): void {
+    console.log('wait called');
+    this.gameService.wait(1);
   }
 
 }

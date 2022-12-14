@@ -5,4 +5,5 @@ export const initialGame: IGame = {
   id: '1',
   difficulty: GameDifficulty.Easy,
   day: 1,
+  status: GameStatus.playing
 }

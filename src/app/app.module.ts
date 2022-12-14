@@ -23,6 +23,7 @@ import { GameSummaryComponent } from './components/game-summary/game-summary.com
 import { LoadGameComponent } from './components/pages/load-game/load-game.component';
 import { AlertComponent } from './components/common/alert/alert.component';
 import { ModalComponent } from './components/common/modal/modal.component';
+import { GameService } from './services/game/game.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,9 @@ import { ModalComponent } from './components/common/modal/modal.component';
       logOnly: environment.production, // Restrict extension to log-only mode
     })
   ],
-  providers: [],
+  providers: [
+    GameService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

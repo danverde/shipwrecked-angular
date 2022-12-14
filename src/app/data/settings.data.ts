@@ -2,7 +2,7 @@ import { GameDifficulty, ISettings } from "../models/settings.model";
 
 export const easyGameSettings: ISettings = {
   gameSettings: {
-    waitSuccessRate: 0.000001,
+    waitSuccessRate: 10000,
   },
   playerSettings: {
     expPerDay: 25,

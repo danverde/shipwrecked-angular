@@ -16,6 +16,7 @@ export class GameComponent implements OnInit, OnDestroy {
   appStore: IAppStore | undefined;
   storeSubscription: Subscription | undefined;
   queryParamSubscription: Subscription | undefined;
+  menuOpen: boolean = false;
 
   constructor(
     private store: Store<IAppStore>,
@@ -50,6 +51,10 @@ export class GameComponent implements OnInit, OnDestroy {
     // TODO should have a thingy to clear the redux store when quitting the game!
     console.log('quit called');
     this.router.navigate(["/main"]);
+  }
+
+  toggleMenuModal(): void {
+    this.menuOpen = !this.menuOpen;
   }
 
 }

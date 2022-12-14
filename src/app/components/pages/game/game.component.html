@@ -4,8 +4,7 @@
     <app-player-summary></app-player-summary>
     <div class="bottom-wrapper">
       <div class="col">
-        <app-button type="primary" (click)="handleSaveClick()">Save</app-button>
-        <app-button type="primary" (click)="handleQuitClick()">Quit</app-button>
+        <app-button type="primary" (click)="toggleMenuModal()">Menu</app-button>
       </div>
     </div>
   </div>
@@ -13,3 +12,11 @@
     <app-map></app-map>
   </div>
 </div>
+
+<app-modal [(open)]="menuOpen">
+  <div class="menu-wrapper">
+    <h2>Menu</h2>
+    <app-button type="primary" (click)="handleSaveClick()">Save Game</app-button>
+    <app-button type="primary" (click)="handleQuitClick()">Quit Game</app-button>
+  </div>
+</app-modal>

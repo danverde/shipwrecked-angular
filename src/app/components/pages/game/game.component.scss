@@ -28,3 +28,16 @@
     margin-left: 15px;
   }
 }
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  app-button {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}

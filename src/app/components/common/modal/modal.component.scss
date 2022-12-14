@@ -23,7 +23,7 @@ $modal-width: 600px;
   z-index: 2;
   height: $modal-height;
   width: $modal-width;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   padding: 30px;
 
   .close-button {

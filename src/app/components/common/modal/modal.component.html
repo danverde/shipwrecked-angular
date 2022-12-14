@@ -1,0 +1,7 @@
+<div class="overlay" [ngClass]="open ? 'visible' : 'hidden'" (click)="closeModal()"></div>
+
+
+<div class="modal" [ngClass]="open ? 'visible' : 'hidden'">
+  <span class="close-button" (click)="closeModal()">X</span>
+  <ng-content></ng-content>
+</div>

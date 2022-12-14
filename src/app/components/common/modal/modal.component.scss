@@ -1,0 +1,40 @@
+@import '../../../styles/variables.scss';
+
+$modal-height: 400px;
+$modal-width: 600px;
+
+.overlay {
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+.modal {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: calc((100vw - $modal-width) / 2);
+  z-index: 2;
+  height: $modal-height;
+  width: $modal-width;
+  background: white;
+  padding: 30px;
+
+  .close-button {
+    font-family: $secondary-font;
+    font-size: $font-size-large;
+    float: right;
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}

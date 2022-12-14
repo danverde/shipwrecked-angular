@@ -9,6 +9,9 @@
     flex-direction: column;
     margin-top: 30px;
     height: calc(100% - 38px - 30px);
-    justify-content: space-around;
+
+    app-button {
+      margin-top: 30px;
+    }
   }
 }

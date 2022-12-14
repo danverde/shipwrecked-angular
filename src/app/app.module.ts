@@ -22,6 +22,7 @@ import { initialStore } from './store/reducers/index.reducer';
 import { GameSummaryComponent } from './components/game-summary/game-summary.component';
 import { LoadGameComponent } from './components/pages/load-game/load-game.component';
 import { AlertComponent } from './components/common/alert/alert.component';
+import { ModalComponent } from './components/common/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AlertComponent } from './components/common/alert/alert.component';
     GameSummaryComponent,
     LoadGameComponent,
     AlertComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

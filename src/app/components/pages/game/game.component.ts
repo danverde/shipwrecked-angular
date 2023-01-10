@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { GameService } from 'src/app/services/game/game.service';
 import { PersistService } from 'src/app/services/persist/persist.service';
+import { GameActions } from 'src/app/store/actions/game.actions';
 import { IAppStore } from 'src/app/store/reducers/index.reducer';
 
 @Component({
@@ -28,7 +29,8 @@ export class GameComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.storeSubscription = this.store.subscribe(x => this.appStore = x);
+    // TODO I don't love subscribing to the entire store...
+    this.storeSubscription = this.store.subscribe(this.handleStoreChange.bind(this));
     // TODO Shouldn't load child components until the game is in redux!
 
     this.queryParamSubscription = this.route.params.subscribe((params: Params) => {
@@ -44,14 +46,18 @@ export class GameComponent implements OnInit, OnDestroy {
     this.queryParamSubscription?.unsubscribe();
   }
 
+  handleStoreChange(store: IAppStore): void {
+    this.appStore = store;
+    this.gameId = store.game.id;
+  }
+
   handleSaveClick(): void {
     if (!this.appStore) return;
     this.persistService.saveGame(this.appStore);
   }
 
   handleQuitClick(): void {
-    // TODO should have a thingy to clear the redux store when quitting the game!
-    console.log('quit called');
+    this.store.dispatch(GameActions.endGame({ gameId: this.gameId }));
     this.router.navigate(["/main"]);
   }
 
@@ -60,7 +66,6 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   wait(): void {
-    console.log('wait called');
     this.gameService.wait(1);
   }
 

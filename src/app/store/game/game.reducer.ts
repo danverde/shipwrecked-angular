@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { IGame } from 'src/app/models/game.model';
-import { GameActions } from '../actions/game.actions';
+import { GameActions } from './game.actions';
 
 export interface IGameState extends IGame { };
 

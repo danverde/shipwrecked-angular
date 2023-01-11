@@ -8,10 +8,10 @@ import { allSettings } from 'src/app/data/settings.data';
 import { GameStatus, IGame } from 'src/app/models/game.model';
 import { IPlayer } from 'src/app/models/player.model';
 import { GameDifficulty } from 'src/app/models/settings.model';
-import { GameActions } from 'src/app/store/actions/game.actions';
-import { MapActions } from 'src/app/store/actions/map.actions';
-import { PlayerActions } from 'src/app/store/actions/player.actions';
-import { IAppStore } from 'src/app/store/reducers/index.reducer';
+import { GameActions } from 'src/app/store/game/game.actions';
+import { MapActions } from 'src/app/store/map/map.actions';
+import { PlayerActions } from 'src/app/store/player/player.actions';
+import { IAppStore } from 'src/app/store/index.reducer';
 import { GuidService } from '../guid/guid.service';
 
 @Injectable({

@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { initialMap } from 'src/app/data/map.data';
 
 import { IMap } from 'src/app/models/map.model';
-import { MapActions } from '../actions/map.actions';
+import { MapActions } from './map.actions';
 
 export interface IMapState extends IMap { };
 

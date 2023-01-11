@@ -1,8 +1,8 @@
 import { Action, ActionReducer } from "@ngrx/store";
 import { ImportState } from "@ngrx/store-devtools/src/actions";
-import { gameReducer, IGameState } from "./game.reducer";
-import { IMapState, mapReducer } from "./map.reducer";
-import { IPlayerState, playerReducer } from "./player.reducer";
+import { gameReducer, IGameState } from "./game/game.reducer";
+import { IMapState, mapReducer } from "./map/map.reducer";
+import { IPlayerState, playerReducer } from "./player/player.reducer";
 
 export interface IAppStore {
   game: IGameState;

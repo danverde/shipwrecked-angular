@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { IGame } from 'src/app/models/game.model';
-import { IGameState } from 'src/app/store/reducers/game.reducer';
-import { IAppStore } from 'src/app/store/reducers/index.reducer';
+import { IGameState } from 'src/app/store/game/game.reducer';
+import { IAppStore } from 'src/app/store/index.reducer';
 
 @Component({
   selector: 'app-game-summary',

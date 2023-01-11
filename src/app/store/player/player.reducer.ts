@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { initialPlayer } from "src/app/data/player.data";
 import { IPlayer } from "src/app/models/player.model";
-import { PlayerActions } from "../actions/player.actions";
+import { PlayerActions } from "./player.actions";
 
 export interface IPlayerState extends IPlayer { };
 

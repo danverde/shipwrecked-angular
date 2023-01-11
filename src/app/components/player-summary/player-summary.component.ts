@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { IPlayer } from 'src/app/models/player.model';
-import { IAppStore } from 'src/app/store/reducers/index.reducer';
+import { IAppStore } from 'src/app/store/index.reducer';
 
 @Component({
   selector: 'app-player-summary',

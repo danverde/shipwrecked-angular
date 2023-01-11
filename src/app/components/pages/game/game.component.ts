@@ -4,8 +4,8 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { GameService } from 'src/app/services/game/game.service';
 import { PersistService } from 'src/app/services/persist/persist.service';
-import { GameActions } from 'src/app/store/actions/game.actions';
-import { IAppStore } from 'src/app/store/reducers/index.reducer';
+import { GameActions } from 'src/app/store/game/game.actions';
+import { IAppStore } from 'src/app/store/index.reducer';
 
 @Component({
   selector: 'app-game',
